@@ -43,6 +43,8 @@
 </template>
 
 <script>
+import firebase from '~/plugins/firebase'
+
 export default {
   data() {
     return {
@@ -76,8 +78,9 @@ export default {
     addThread() {
       const name = this.newName
       const text = this.newText
+      const postedAt = firebase.firestore.Timestamp.fromDate(new Date())
 
-      this.$store.dispatch('addThread', { name, text })
+      this.$store.dispatch('addThread', { name, text, postedAt })
       this.text = ''
     },
   },

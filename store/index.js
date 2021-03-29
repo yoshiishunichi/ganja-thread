@@ -46,7 +46,7 @@ export const actions = {
       .add({
         name: thread.name,
         text: thread.text,
-        postedAt: firebase.firestore.Timestamp.fromDate(new Date()),
+        postedAt: thread.postedAt,
       })
       .then((docRef) => {
         console.log('Document written with ID: ', docRef.id)
