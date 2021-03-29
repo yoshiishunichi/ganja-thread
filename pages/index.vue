@@ -119,6 +119,6 @@ p {
 .text {
   font-size: 21px;
   margin-top: 9px;
-  padding-bottom: 9px;
+  padding-bottom: 12px;
 }
 </style>
