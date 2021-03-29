@@ -32,7 +32,7 @@ export const actions = {
       .then((res) => {
         res.forEach((doc) => {
           console.log('success :' + `${doc.id} => ${doc.data()}`)
-          commit.add('addThread', doc.data())
+          commit('addThread', doc.data())
         })
       })
       .catch((err) => {
