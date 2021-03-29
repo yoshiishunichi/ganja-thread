@@ -4,7 +4,7 @@
     <div class="threads-container">
       <div v-for="(thread, index) in $store.getters.getThreads" :key="index">
         <p>No. {{ index + 1 }}</p>
-        <p>{{ thread.postedAt }}</p>
+        <p>{{ thread.postedAt.toDate() }}</p>
         <h3>{{ thread.name }}さん</h3>
         <h2>{{ thread.text }}</h2>
       </div>

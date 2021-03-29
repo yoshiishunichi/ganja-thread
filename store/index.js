@@ -28,6 +28,7 @@ export const mutations = {
 export const actions = {
   fetchNewStatus({ commit }) {
     threadsRef
+      .orderBy('postedAt')
       .get()
       .then((res) => {
         res.forEach((doc) => {
