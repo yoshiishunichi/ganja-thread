@@ -15,7 +15,11 @@
         </div>
         <div class="content">
           <h3 class="name">名前: {{ thread.name }}さん</h3>
-          <h2 class="text">{{ thread.text }}</h2>
+          <!-- eslint-disable vue/no-v-html -->
+          <h2
+            class="text"
+            v-html="getDescription(thread.text.replaceAll('\\n', '\n'))"
+          ></h2>
         </div>
       </div>
     </div>
@@ -28,6 +32,11 @@ export default {
     this.$store.dispatch('fetchNewStatus')
   },
   methods: {
+    getDescription(text) {
+      const splitDescription = text.split('\n')
+      const brDescription = splitDescription.join('<br />')
+      return brDescription
+    },
     getDateFormat(postedAt) {
       const year = postedAt.getFullYear()
       const month = postedAt.getMonth() + 1
@@ -91,9 +100,11 @@ p {
   margin-top: 12px;
   margin-right: 12px;
 }
+
 .content {
   clear: both;
   margin-left: 24px;
+  margin-right: 12px;
   margin-top: 24px;
   text-align: left;
 }
