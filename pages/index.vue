@@ -7,10 +7,12 @@
         :key="index"
         class="thread"
       >
-        <p class="num">No. {{ index + 1 }}</p>
-        <p class="posted">
-          投稿日: {{ getDateFormat(thread.postedAt.toDate()) }}
-        </p>
+        <div class="meta">
+          <p class="num">No. {{ index + 1 }}</p>
+          <p class="posted">
+            投稿日: {{ getDateFormat(thread.postedAt.toDate()) }}
+          </p>
+        </div>
         <div class="content">
           <h3 class="name">名前: {{ thread.name }}さん</h3>
           <h2 class="text">{{ thread.text }}</h2>
@@ -70,6 +72,10 @@ h1 {
   border-radius: 15px;
 }
 
+.meta {
+  overflow: hidden;
+}
+
 p {
   font-size: 15px;
 }
@@ -85,23 +91,23 @@ p {
   margin-top: 12px;
   margin-right: 12px;
 }
-
 .content {
   clear: both;
+  margin-left: 24px;
   margin-top: 24px;
   text-align: left;
 }
 
 .name {
-  font-size: 18px;
+  font-size: 15px;
   font-weight: normal;
-  margin-left: 15px;
+  text-decoration: underline;
+  color: #666;
 }
 
 .text {
   font-size: 21px;
-  margin-left: 15px;
-  margin-top: 18px;
+  margin-top: 9px;
   padding-bottom: 9px;
 }
 </style>
