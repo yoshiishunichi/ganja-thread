@@ -105,7 +105,7 @@ p {
   clear: both;
   margin-left: 24px;
   margin-right: 12px;
-  margin-top: 24px;
+  margin-top: 18px;
   text-align: left;
 }
 
