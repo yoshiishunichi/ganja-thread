@@ -8,8 +8,8 @@
         class="thread"
       >
         <p>No. {{ index + 1 }}</p>
-        <p>{{ thread.postedAt.toDate() }}</p>
-        <h3>{{ thread.name }}さん</h3>
+        <p>投稿日: {{ getDateFormat(thread.postedAt.toDate()) }}</p>
+        <h3>名前: {{ thread.name }}さん</h3>
         <h2>{{ thread.text }}</h2>
       </div>
     </div>
@@ -20,6 +20,22 @@
 export default {
   created() {
     this.$store.dispatch('fetchNewStatus')
+  },
+  methods: {
+    getDateFormat(postedAt) {
+      const year = postedAt.getFullYear()
+      const month = postedAt.getMonth() + 1
+      const date = postedAt.getDate()
+      let hours = postedAt.getHours()
+      if (hours <= 9) {
+        hours = '0' + String(hours)
+      }
+      let minutes = postedAt.getMinutes()
+      if (minutes <= 9) {
+        minutes = '0' + String(minutes)
+      }
+      return `${year}/${month}/${date} ${hours}:${minutes}`
+    },
   },
 }
 </script>
