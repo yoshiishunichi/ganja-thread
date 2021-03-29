@@ -23,11 +23,33 @@
         </div>
       </div>
     </div>
+    <div class="post-form">
+      <p>
+        <input
+          v-model="newName"
+          class="input"
+          type="text"
+          placeholder="ganja_tuber大好きっ"
+        />
+      </p>
+      <p>
+        <textarea v-model="newText" class="input" type="text" />
+      </p>
+      <p>
+        <button class="button" @click="addThread">投稿</button>
+      </p>
+    </div>
   </div>
 </template>
 
 <script>
 export default {
+  data() {
+    return {
+      newName: '',
+      newText: '',
+    }
+  },
   created() {
     this.$store.dispatch('fetchNewStatus')
   },
@@ -50,6 +72,13 @@ export default {
         minutes = '0' + String(minutes)
       }
       return `${year}/${month}/${date} ${hours}:${minutes}`
+    },
+    addThread() {
+      const name = this.newName
+      const text = this.newText
+
+      this.$store.dispatch('addThread', { name, text })
+      this.text = ''
     },
   },
 }

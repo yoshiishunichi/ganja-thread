@@ -40,6 +40,22 @@ export const actions = {
         console.log('error :' + err)
       })
   },
+  addThread({ commit }, thread) {
+    console.log(thread)
+    threadsRef
+      .add({
+        name: thread.name,
+        text: thread.text,
+        postedAt: firebase.firestore.Timestamp.fromDate(new Date()),
+      })
+      .then((docRef) => {
+        console.log('Document written with ID: ', docRef.id)
+        commit('addThread', thread)
+      })
+      .catch((err) => {
+        console.error('Error adding document :' + err)
+      })
+  },
 }
 
 export const getters = {
