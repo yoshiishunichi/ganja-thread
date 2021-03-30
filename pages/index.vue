@@ -29,15 +29,21 @@
           v-model="newName"
           class="input"
           type="text"
-          placeholder="ganja_tuber大好きっ"
+          placeholder="ganja_tuber大好きっ子"
         />
       </p>
       <p>
-        <textarea v-model="newText" class="input" type="text" />
+        <textarea
+          v-model="newText"
+          class="input"
+          type="text"
+          @click="notAttention"
+        />
       </p>
       <p>
         <button class="button" @click="addThread">投稿</button>
       </p>
+      <p v-if="notText" class="attention">テキスト入力してください！</p>
     </div>
   </div>
 </template>
@@ -50,6 +56,7 @@ export default {
     return {
       newName: '',
       newText: '',
+      notText: false,
     }
   },
   created() {
@@ -76,12 +83,22 @@ export default {
       return `${year}/${month}/${date} ${hours}:${minutes}`
     },
     addThread() {
-      const name = this.newName
-      const text = this.newText
-      const postedAt = firebase.firestore.Timestamp.fromDate(new Date())
+      let name = this.newName
+      if (!this.newName) {
+        name = 'ganja_tuber大好きっ子'
+      }
+      if (this.newText) {
+        const text = this.newText
+        const postedAt = firebase.firestore.Timestamp.fromDate(new Date())
 
-      this.$store.dispatch('addThread', { name, text, postedAt })
-      this.text = ''
+        this.$store.dispatch('addThread', { name, text, postedAt })
+        this.newText = ''
+      } else {
+        this.notText = true
+      }
+    },
+    notAttention() {
+      this.notText = false
     },
   },
 }
@@ -152,5 +169,11 @@ p {
   font-size: 21px;
   margin-top: 9px;
   padding-bottom: 12px;
+}
+
+.attention {
+  color: red;
+  font-weight: bold;
+  font-size: 15px;
 }
 </style>
