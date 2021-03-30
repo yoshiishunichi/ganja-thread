@@ -84,6 +84,7 @@ export default {
     },
     addThread() {
       let name = this.newName
+      this.newText = this.newText.replace(/(^\s+)|(\s+$)/g, '')
       if (!this.newName) {
         name = 'ganja_tuber大好きっ子'
       }
