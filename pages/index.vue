@@ -165,9 +165,10 @@ p {
   max-width: 300px;
   position: fixed;
   z-index: 100;
-  opacity: 0.8;
+  opacity: 0.9;
   right: 12px;
   bottom: 42px;
+  height: 280px;
 }
 
 .name {
@@ -217,6 +218,7 @@ p {
   height: 150px;
   width: 80%;
   padding-left: 3px;
+  resize: none;
 }
 
 .button {
