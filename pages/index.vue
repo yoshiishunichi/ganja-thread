@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <h1>ganja_tuberについて語るスレ</h1>
+    <h1>無意味なことを書く掲示板</h1>
     <div class="threads-container">
       <div
         v-for="(thread, index) in $store.getters.getThreads"
@@ -116,7 +116,7 @@ export default {
 
 h1 {
   font-size: 30px;
-  margin-top: 24px;
+  padding-top: 24px;
   margin-bottom: 24px;
   color: white;
 }
