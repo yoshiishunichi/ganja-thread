@@ -160,7 +160,7 @@ p {
 }
 
 .post-form {
-  background: rgb(212, 102, 98);
+  background: #ccc;
   width: 50%;
   max-width: 300px;
   position: fixed;
@@ -206,14 +206,30 @@ p {
   border-radius: 5px;
 }
 
+.name-input {
+  height: 24px;
+  width: 70%;
+  padding-left: 3px;
+  border-width: 1px;
+}
+
 .text-input {
   height: 150px;
   width: 80%;
+  padding-left: 3px;
 }
 
 .button {
   width: 40%;
   cursor: pointer;
+  border: 1px #333 solid;
+  background: #3b8070;
+  color: white;
+  font-weight: bold;
+}
+
+.button:hover {
+  opacity: 0.7;
 }
 
 .attention {
