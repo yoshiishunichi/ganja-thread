@@ -1,4 +1,24 @@
+require('dotenv').config()
+const {
+  FIREBASE_APIKEY,
+  FIREBASE_AUTHDOMAIN,
+  FIREBASE_DATABASE_URL,
+  FIREBASE_PROJECTID,
+  FIREBASE_STORAGEBUCKET,
+  FIREBASE_SENDERID,
+  FIREBASE_APPID,
+} = process.env
+
 export default {
+  env: {
+    FIREBASE_APIKEY,
+    FIREBASE_AUTHDOMAIN,
+    FIREBASE_DATABASE_URL,
+    FIREBASE_PROJECTID,
+    FIREBASE_STORAGEBUCKET,
+    FIREBASE_SENDERID,
+    FIREBASE_APPID,
+  },
   // Target: https://go.nuxtjs.dev/config-target
   target: 'static',
 

@@ -2,13 +2,13 @@ import firebase from 'firebase'
 
 if (!firebase.apps.length) {
   firebase.initializeApp({
-    apiKey: 'AIzaSyBQzHXztphESVEVe8yySH0de39Lhmlg6jY',
-    authDomain: 'ganja-thread.firebaseapp.com',
-    databaseURL: 'https://ganja-thread.firebaseio.com',
-    projectId: 'ganja-thread',
-    storageBucket: 'ganja-thread.appspot.com',
-    messagingSenderId: '947993395595',
-    appId: '1:947993395595:web:ee634d1c79adae63b4ef8e',
+    apiKey: process.env.FIREBASE_APIKEY,
+    authDomain: process.env.FIREBASE_AUTHDOMAIN,
+    databaseURL: process.env.FIREBASE_DATABASE_URL,
+    projectId: process.env.FIREBASE_PROJECTID,
+    storageBucket: process.env.FIREBASE_STORAGEBUCKET,
+    messagingSenderId: process.env.FIREBASE_SENDERID,
+    appId: process.env.FIREBASE_APPID,
   })
 }
 
