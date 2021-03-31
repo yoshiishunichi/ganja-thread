@@ -24,26 +24,26 @@
       </div>
     </div>
     <div class="post-form">
-      <p>
+      <p class="name-holder">
         <input
           v-model="newName"
-          class="input"
+          class="name-input"
           type="text"
           placeholder="ganja_tuber大好きっ子"
         />
       </p>
-      <p>
+      <p class="text-holder">
         <textarea
           v-model="newText"
-          class="input"
+          class="text-input"
           type="text"
           @click="notAttention"
         />
       </p>
-      <p>
+      <p class="button-holder">
         <button class="button" @click="addThread">投稿</button>
       </p>
-      <p v-if="notText" class="attention">テキスト入力してください！</p>
+      <p v-if="notText" class="attention">本文を入力してください！</p>
     </div>
   </div>
 </template>
@@ -159,6 +159,17 @@ p {
   text-align: left;
 }
 
+.post-form {
+  background: rgb(212, 102, 98);
+  width: 50%;
+  max-width: 300px;
+  position: fixed;
+  z-index: 100;
+  opacity: 0.8;
+  right: 12px;
+  bottom: 42px;
+}
+
 .name {
   font-size: 15px;
   font-weight: normal;
@@ -170,6 +181,39 @@ p {
   font-size: 21px;
   margin-top: 9px;
   padding-bottom: 12px;
+}
+
+.name-holder {
+  text-align: left;
+  margin-top: 18px;
+  margin-bottom: 18px;
+  margin-left: 12px;
+}
+
+.text-holder {
+  text-align: left;
+  margin-left: 12px;
+}
+
+.button-holder {
+  margin: 9px auto;
+}
+
+.name-input,
+.text-input,
+.button {
+  outline: none;
+  border-radius: 5px;
+}
+
+.text-input {
+  height: 150px;
+  width: 80%;
+}
+
+.button {
+  width: 40%;
+  cursor: pointer;
 }
 
 .attention {
