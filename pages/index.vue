@@ -29,7 +29,7 @@
           v-model="newName"
           class="name-input"
           type="text"
-          placeholder="ganja_tuber大好きっ子"
+          placeholder="名無し"
         />
       </p>
       <p class="text-holder">
