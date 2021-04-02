@@ -38,6 +38,7 @@
           class="text-input"
           type="text"
           @click="notAttention"
+          @keydown.enter.meta="addThread"
         />
       </p>
       <p class="button-holder">
