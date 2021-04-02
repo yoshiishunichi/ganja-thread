@@ -29,7 +29,7 @@
           v-model="newName"
           class="name-input"
           type="text"
-          placeholder="名無し"
+          :placeholder="defaultName"
         />
       </p>
       <p class="text-holder">
@@ -55,6 +55,7 @@ export default {
   data() {
     return {
       newName: '',
+      defaultName: '名無し',
       newText: '',
       notText: false,
     }
@@ -86,7 +87,7 @@ export default {
       let name = this.newName
       this.newText = this.newText.replace(/(^\s+)|(\s+$)/g, '')
       if (!this.newName) {
-        name = 'ganja_tuber大好きっ子'
+        name = this.defaultName
       }
       if (this.newText) {
         const text = this.newText
@@ -112,6 +113,7 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
+  word-wrap: break-word;
 }
 
 h1 {
