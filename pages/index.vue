@@ -163,13 +163,14 @@ p {
 
 .post-form {
   background: #ccc;
-  width: 50%;
-  max-width: 300px;
+  width: 30%;
+  max-width: 250px;
+  min-width: 200px;
   position: fixed;
   z-index: 100;
   opacity: 0.9;
   right: 12px;
-  bottom: 42px;
+  bottom: 21px;
   height: 280px;
 }
 
@@ -218,7 +219,7 @@ p {
 
 .text-input {
   height: 150px;
-  width: 80%;
+  width: 97%;
   padding-left: 3px;
   resize: none;
 }
